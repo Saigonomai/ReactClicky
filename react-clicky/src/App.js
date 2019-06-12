@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from 'react-bootstrap/Nav'
-
+import Navbar from 'react-bootstrap/Navbar'
 
 import ImgCard from "./components/ImgCard";
 import Wrapper from "./components/Wrapper";
@@ -77,7 +77,20 @@ class App extends React.Component {
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous"
       />
-      <Nav className="bg-primary justify-content-between">
+
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Collapse className="justify-content-between">
+        <Navbar.Brand>Clicky Game</Navbar.Brand>
+          <Navbar.Text>
+          <h3>{this.state.message}</h3>
+          </Navbar.Text>
+          <Navbar.Text>
+          <h3>Score: {this.state.currscore} | Top Score: {this.state.topscore}</h3>
+          </Navbar.Text>
+        </Navbar.Collapse>
+      </Navbar>
+
+      {/* <Nav className="bg-primary justify-content-between">
         <Nav.Item>
           <h2><strong>Clicky Game</strong></h2>
         </Nav.Item>
@@ -87,7 +100,7 @@ class App extends React.Component {
         <Nav.Item>
           <h3>Score: {this.state.currscore} | Top Score: {this.state.topscore}</h3>
         </Nav.Item>
-      </Nav>
+      </Nav> */}
       <Wrapper>
         {imagecards}
       </Wrapper>
